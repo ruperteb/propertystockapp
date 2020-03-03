@@ -1,0 +1,12 @@
+.multsellist {
+    display: grid !important;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.multselitem{
+
+    
+    /* width: 1500px; */
+    grid-column-start: 2;
+    grid-column-end: 3;
+}

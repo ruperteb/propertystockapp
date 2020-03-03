@@ -1,0 +1,123 @@
+.modal-dialog,
+.modal-content {
+    /* 80% of window height */
+    height: 200px;
+}
+
+.modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 120px);
+    overflow-y: scroll;
+}  
+
+.modal-header {
+    /* 80% of window height */
+    height: 70px;
+}
+.propinfocontainer {
+    display: inline-grid;
+    grid-template-columns: 30% 20% 25% 25%;
+    grid-template-rows: repeat(1, 30%);
+    justify-content: center;
+    width:80%;
+    background-color: rgba(189, 195, 210, 0.5);
+}
+
+.leftcol {
+    display: grid;
+    justify-items: start;
+   /*  grid-template-columns: 30%; */
+   /*  grid-template-rows: 22% auto 22%; */
+}
+
+.midcol {
+    display: grid;
+   /*  grid-template-columns: 30%; */
+   /*  grid-template-rows: 22% auto 22%; */
+}
+
+
+
+.DayPickerInput > input {
+    line-height :2;
+    width: 100px;
+    text-align: center;
+}
+
+.map {
+align-items: center;
+justify-self: end;
+padding-top: 25px;
+padding-right: 25px;
+    
+}
+
+.tab {
+    background-color: rgba(189, 195, 210, 0.5);
+
+}
+
+
+ article > div > table {
+    width: 98% !important;
+    margin: 1rem;
+    background-color:  rgb(246, 255, 254);
+}
+
+.tabsbar {
+    background-color: rgba(189, 195, 210, 0.5);
+
+}
+
+.premisesinfo {
+    width: 80%;
+    background-color: rgba(189, 195, 210, 0.5);
+    padding: 1rem;
+
+}
+
+#PremisesInfoTab-tab-Basic {
+
+    background-color: rgb(222, 226, 230);
+}
+
+#PremisesInfoTab-tab-Rental {
+
+    background-color: rgb(222, 226, 230);
+}
+
+#PremisesInfoTab-tab-Parking {
+
+    background-color: rgb(222, 226, 230);
+}
+
+#PremisesInfoTab-tab-Industrial {
+
+    background-color: rgb(222, 226, 230);
+}
+
+#PremisesInfoTab-tab-Lease {
+
+    background-color: rgb(222, 226, 230);
+}
+
+.active {
+
+    background-color:  rgb(246, 255, 254) !important;
+    border-top-color: rgb(222, 226, 230);
+    border-right-color: rgb(222, 226, 230);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-color: rgb(222, 226, 230);
+}
+
+.navbuttons {
+display:grid;
+grid-template-columns: 10% 10% 80%;
+width: 80%;
+/* background-color: rgba(189, 195, 210, 0.5); */
+padding: 1rem;
+}
+
+.filterdropdown {
+    width: 65%;
+}

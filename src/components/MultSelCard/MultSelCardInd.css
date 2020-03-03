@@ -1,0 +1,106 @@
+.multselcard {
+    background-color: azure;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 10% 70% 20%;
+}
+
+.headertable {
+    font-size: 1.1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    text-align: center;
+    margin-bottom: 0px;
+    box-shadow: 0 0 8px 2px rgba( 0, 0, 0, .2 );
+}
+
+td {
+    border: 1px solid #4d4c4c;
+}
+
+.topheader {
+    border-top: 1.5px solid #4d4c4c;
+    border-left: 1.5px solid #4d4c4c;
+    border-right: 1.5px solid #4d4c4c;
+    font-size: 1.3em;
+   
+}
+
+.middleheader{
+    border-bottom: none;
+}
+
+.bottomheader{
+    border-top: none;
+    border-bottom: 1.5px solid #4d4c4c;
+    font-size: 0.8em;
+}
+
+.leftheader{
+    border-left: 1.5px solid #4d4c4c;
+}
+
+.rightheader{
+    border-right: 1.5px solid #4d4c4c;
+}
+
+.imagecontainer {
+    display:grid;
+    grid-template-columns: 33% 33% auto;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    min-height: 5px;
+}
+
+.tablediv {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+}
+
+.image {
+
+    height: 300px;
+    width:auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 8px 2px rgba( 0, 0, 0, .2 );
+  }
+
+.headernumber {
+padding-left: 50px;
+    font-size: 1.8rem;
+  }
+
+.headerbuilding {
+
+    font-size: 1.8rem;
+  }
+
+.headeraddress {
+
+    font-size: 1.2rem;
+  }
+
+  .agentdata {
+    font-size: 0.8rem;
+}
+
+.agency {
+  font-weight: 650;
+    margin-bottom: 0;
+    padding-top: 2px;
+    text-align: left;
+}
+
+.agent {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.phone {
+  margin-bottom: 0;
+  text-align: left;
+  padding-bottom: 2px;
+}

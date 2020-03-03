@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.NavBar {
+  display: grid;
+  grid-template-columns: 400px auto 400px;
+  grid-template-rows: 150px;
+  align-items: center;
+  justify-items: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

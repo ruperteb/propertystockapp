@@ -1,0 +1,44 @@
+.List {
+    display: grid;
+    grid-template-columns:20% 60% 20%;
+    grid-template-rows: auto;
+    justify-items: center;
+    grid-row-gap: 25px;
+    
+    
+    }
+    .item {
+    width: 800px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    }
+
+    .agentcard {
+        width:400px !important
+    }
+
+    .agentcardtitle {
+        height: 3rem !important;
+    }
+
+    .backbtn {
+    display: grid;
+    grid-template-columns: 20% 10% 70%;
+    margin-bottom: 1em
+    }
+
+    .agentaddmodal .modal-content {
+        height: 350px;
+    }
+
+    .agentaddmodal .form-control {
+        margin: 10px
+    }
+
+    .agenteditmodal .modal-content {
+        height: 350px;
+    }
+
+    .agenteditmodal .form-control {
+        margin: 10px
+    }

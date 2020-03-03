@@ -1,0 +1,36 @@
+.navbar {
+    margin: auto;
+    width: 800px;
+    display: grid;
+grid-template-columns:55% 45%;
+grid-template-rows: auto;
+
+justify-content: center;
+}
+
+
+.filterbutton {
+    width: 150px !important;
+}
+
+.modal-dialog,
+.modal-content {
+    /* 80% of window height */
+    height: 225px;
+}
+
+.modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 120px);
+   
+}  
+
+.modal-header {
+    /* 80% of window height */
+    height: 70px;
+}
+
+.search {
+    width: 25em !important;
+}
+

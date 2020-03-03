@@ -1,0 +1,15 @@
+.filtermodal .modal-content {
+
+    height: 500px
+}
+
+.modaldrop {
+
+    max-width: 40% !important
+}
+
+.range {
+    max-width: 60% !important;
+    flex:0% !important
+
+}

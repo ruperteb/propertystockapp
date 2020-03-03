@@ -1,0 +1,14 @@
+.List {
+    display: grid;
+    grid-template-columns:20% 60% 20%;
+    grid-template-rows: auto;
+    justify-items: center;
+    row-gap: 50px;
+    
+    
+    }
+    .item {
+    width: 800px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    }

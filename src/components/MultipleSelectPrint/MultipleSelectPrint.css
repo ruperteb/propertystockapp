@@ -1,0 +1,39 @@
+.multsellist {
+    display: grid !important;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.multselitem{
+
+    
+    /* width: 1500px; */
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+@media print{
+  .headertable {
+
+    transform: scale(.9);
+   margin-left: -50px;
+   }
+
+  @page {
+    size: landscape;
+   
+  }
+  }
+
+  .headertable {
+
+    font-size: 0.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    text-align: center;
+    margin-bottom: 0px;
+   }
+
+   .multselcheck .custom-control-label {
+    color: white !important;
+   }
