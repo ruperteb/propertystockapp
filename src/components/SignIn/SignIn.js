@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -15,8 +15,7 @@ const onPasswordChange = (event) => {
     setsignInPassword({signInPassword: event.target.value})
   }
 
-  console.log(signInEmail.signInEmail);
-  console.log(signInPassword);
+
 
   const onSubmitSignIn = () => {
       if (signInEmail.signInEmail === process.env.REACT_APP_SIGNINEMAIL && signInPassword.signInPassword === process.env.REACT_APP_SIGNINPASSWORD) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import BootstrapTable from 'react-bootstrap-table-next';
 import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
@@ -12,7 +12,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import Form from 'react-bootstrap/Form';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
-import ReactMapGL from 'react-map-gl';
+
 import Map from "../Map/Map"
 import 'moment/locale/en-gb';
 import MomentLocaleUtils, {
@@ -20,8 +20,8 @@ import MomentLocaleUtils, {
   parseDate,
 } from 'react-day-picker/moment';
 import Select from 'react-select';
-import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
-import cloudinary from 'cloudinary-core';
+/* import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
+import cloudinary from 'cloudinary-core'; */
 /* import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";

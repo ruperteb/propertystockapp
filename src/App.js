@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SignIn from "./components/SignIn/SignIn";
 import MainList from "./components/MainList/MainList";
 import Navigation from "./components/Navigation/Navigation";
@@ -12,13 +12,6 @@ function App() {
 
 const [route, setRoute] = useState("signin");
 const [isSignedIn, setisSignedIn] = useState(false);
-
-const server = process.env.REACT_APP_SERVER
-
-console.log (server);
-
-console.log (route);
-console.log (isSignedIn);
 
 const onRouteChange = (route) => {
   if (route === "mainlist") {

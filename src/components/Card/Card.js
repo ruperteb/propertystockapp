@@ -1,11 +1,10 @@
-import React , { useState, useEffect } from 'react';
+import React , { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "./card.css"
 import arrow from "./arrow.png"
-import { Checkbox } from 'react-bootstrap';
 
 const PropCard = (props) => {   /* destructuring props inside bracket */
    /*  const {name, email, id} = props */
