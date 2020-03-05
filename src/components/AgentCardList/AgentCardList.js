@@ -12,6 +12,8 @@ import Modal from 'react-bootstrap/Modal';
 
 const AgentCardList = (props) => {
 
+  const server = process.env.REACT_APP_SERVER
+
     AgentCardList.defaultProps = {
         selectedAgency: 1
       }
@@ -48,7 +50,7 @@ useEffect( () => {
     // First we set the loading and error states
     async function fetchdata () {
       /* console.log(props.selectedProp.selectedProp) */
-    await fetch("http://localhost:3000/agencylist/selagency", {
+    await fetch(`${server}/agencylist/selagency`, {
       method: "post",
       headers: {"Content-Type": "application/json" } ,
       body: JSON.stringify({
@@ -142,7 +144,7 @@ console.log(saveAddData);
        console.log(saveAddData)
        
      
-      await fetch("http://localhost:3000/agencylist/selagency/add", {
+      await fetch(`${server}/agencylist/selagency/add`, {
          method: "post",
          headers: {"Content-Type": "application/json"},
          body: JSON.stringify({
@@ -150,7 +152,7 @@ console.log(saveAddData);
          })
        })
      
-       await fetch("http://localhost:3000/agencylist/selagency", {
+       await fetch(`${server}/agencylist/selagency`, {
            method: "post",
            headers: {"Content-Type": "application/json" } ,
            body: JSON.stringify({
@@ -177,7 +179,7 @@ console.log(saveAddData);
 
   console.log(result);
 
- await fetch("http://localhost:3000/agencylist/selagency/remove", {
+ await fetch(`${server}/agencylist/selagency/remove`, {
     method: "post",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
@@ -187,7 +189,7 @@ console.log(saveAddData);
       
     })
   })
-  await fetch("http://localhost:3000/agencylist/selagency", {
+  await fetch(`${server}/agencylist/selagency`, {
       method: "post",
       headers: {"Content-Type": "application/json" } ,
       body: JSON.stringify({
@@ -271,7 +273,7 @@ const handleEditButton = async (value) => {
   console.log(saveEditData)
   
 
- await fetch("http://localhost:3000/agencylist/selagency/edit", {
+ await fetch(`${server}/agencylist/selagency/edit`, {
     method: "post",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
@@ -279,7 +281,7 @@ const handleEditButton = async (value) => {
     })
   })
 
-  await fetch("http://localhost:3000/agencylist/selagency", {
+  await fetch(`${server}/agencylist/selagency`, {
       method: "post",
       headers: {"Content-Type": "application/json" } ,
       body: JSON.stringify({

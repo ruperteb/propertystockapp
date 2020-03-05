@@ -19,7 +19,7 @@ const onPasswordChange = (event) => {
   console.log(signInPassword);
 
   const onSubmitSignIn = () => {
-      if (signInEmail.signInEmail === "test@gmail.com" && signInPassword.signInPassword === "test") {
+      if (signInEmail.signInEmail === process.env.REACT_APP_SIGNINEMAIL && signInPassword.signInPassword === process.env.REACT_APP_SIGNINPASSWORD) {
         props.onRouteChange('mainlist');
       } else {
           console.log(signInPassword);

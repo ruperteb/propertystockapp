@@ -15,6 +15,8 @@ import AgentCardList from '../AgentCardList/AgentCardList';
 
 function AgencyList() {
 
+  const server = process.env.REACT_APP_SERVER
+
   const db = [{
     _id: 1,
     AgencyName: "",
@@ -111,7 +113,7 @@ console.log(selectedAgency)
     setLoading(true)
     setError(null)
 
-    fetch('http://localhost:3000/agencylist')
+    fetch(`${server}/agencylist`)
       .then(res => res.json())
       .then(data => {
         setagencyData(data);
@@ -196,7 +198,7 @@ useEffect(() => setDidMount(true), [])
 
  const handleAddFetch = async () => {
   if (didMount) {
- await fetch("http://localhost:3000/agencylist/add", {
+ await fetch(`${server}/agencylist/add`, {
     method: "post",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
@@ -214,7 +216,7 @@ useEffect(() => setDidMount(true), [])
     /* setselectedProp(lastAdded._id); */
     
   })
-  await fetch('http://localhost:3000/agencylist')
+  await fetch(`${server}/agencylist`)
       .then(res => res.json())
       .then(data => {
         setagencyData(data);
@@ -253,7 +255,7 @@ useEffect(() => setDidMount(true), [])
 
 
 useEffect(()=> {
-  fetch('http://localhost:3000/agencylist')
+  fetch(`${server}/agencylist`)
       .then(res => res.json())
       .then(data => {
         setagencyData(data);
@@ -266,7 +268,7 @@ const handleRemoveButton = async (result) => {
 
   console.log(result);
 
- await fetch("http://localhost:3000/agencylist/remove", {
+ await fetch(`${server}/agencylist/remove`, {
     method: "post",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
@@ -275,7 +277,7 @@ const handleRemoveButton = async (result) => {
       
     })
   })
- await fetch('http://localhost:3000/agencylist')
+ await fetch(`${server}/agencylist`)
   .then(res => res.json())
   .then(data => {
     setagencyData(data);
@@ -302,7 +304,7 @@ const handleEditButton = async () => {
   console.log(saveEditData)
   
 
- await fetch("http://localhost:3000/agencylist/edit", {
+ await fetch(`${server}/agencylist/edit`, {
     method: "post",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
@@ -310,7 +312,7 @@ const handleEditButton = async () => {
     })
   })
 
-  await fetch('http://localhost:3000/agencylist')
+  await fetch(`${server}/agencylist`)
   .then(res => res.json())
   .then(data => {
     setagencyData(data);

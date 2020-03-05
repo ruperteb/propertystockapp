@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, {Marker} from 'react-map-gl';
 import MapMarker from "./mapmarker.png"
 
-const MAPBOX_TOKEN = 'pk.eyJ1IjoicnVwZXJ0ZWIiLCJhIjoiY2s1NWljdXAxMGcxMDNsa2J6MDRtYzloNiJ9.3CC5NFFUvlBMDULDdroiwA';
+const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 function Map(props) {
 

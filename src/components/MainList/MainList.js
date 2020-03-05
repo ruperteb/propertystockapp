@@ -16,6 +16,9 @@ import MultipleSelectPrint from '../MultipleSelectPrint/MultipleSelectPrint';
 
 function MainList() {
 
+  
+  const server = process.env.REACT_APP_SERVER
+
   const forceUpdate = useForceUpdate();
   var [updateCount, setupdateCount] = useState(0);
 
@@ -59,7 +62,7 @@ function MainList() {
     setLoading(true)
     setError(null)
 
-    fetch('http://localhost:3000/mainlist')
+    fetch(`${server}/mainlist`)
       .then(res => res.json())
       .then(data2 => {
         setData(data2);
@@ -80,7 +83,7 @@ useEffect(() => setDidMount(true), [])
 
  const handleAddFetch = async () => {
   if (didMount) {
- await fetch("http://localhost:3000/mainlist/add", {
+ await fetch(`${server}/mainlist/add`, {
     method: "post",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
@@ -95,7 +98,7 @@ useEffect(() => setDidMount(true), [])
     setselectedProp(lastAdded._id);
     setselectedPropData(lastAdded);
   })
-  await fetch('http://localhost:3000/mainlist')
+  await fetch(`${server}/mainlist`)
       .then(res => res.json())
       .then(data2 => {
         setData(data2);
@@ -140,7 +143,7 @@ useEffect(() => setDidMount(true), [])
  }
 
 useEffect(()=> {
-  fetch('http://localhost:3000/mainlist')
+  fetch(`${server}/mainlist`)
       .then(res => res.json())
       .then(data2 => {
         setData(data2);
@@ -177,7 +180,7 @@ const handleRemoveFetch = async () => {
     multipleSelect.forEach(ele => {
       if (ele.state) {
 
-        fetch("http://localhost:3000/mainlist/remove", {
+        fetch(`${server}/mainlist/remove`, {
           method: "post",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({
@@ -190,7 +193,7 @@ const handleRemoveFetch = async () => {
     })
   
   console.log(multipleSelect)
- await fetch('http://localhost:3000/mainlist')
+ await fetch(`${server}/mainlist`)
       .then(res => res.json())
       .then(data2 => {
         setData(data2);

@@ -13,7 +13,9 @@ function App() {
 const [route, setRoute] = useState("signin");
 const [isSignedIn, setisSignedIn] = useState(false);
 
+const server = process.env.REACT_APP_SERVER
 
+console.log (server);
 
 console.log (route);
 console.log (isSignedIn);

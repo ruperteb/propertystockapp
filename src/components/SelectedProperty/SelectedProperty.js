@@ -43,6 +43,7 @@ moment().format();
 
 function SelectedProperty(props) {
  
+  const server = process.env.REACT_APP_SERVER
   
 
 
@@ -218,7 +219,7 @@ const selagentphone = {value: propData.Phone, label: propData.Phone}
     // First we set the loading and error states
     async function fetchdata () {
       /* console.log(props.selectedProp.selectedProp) */
-    await fetch("http://localhost:3000/mainlist/selprop", {
+    await fetch(`${server}/mainlist/selprop`, {
       method: "post",
       headers: {"Content-Type": "application/json" } ,
       body: JSON.stringify({
@@ -264,7 +265,7 @@ return total
 
   useEffect(() => {
 
-    fetch('http://localhost:3000/mainlist/selprop/agents')
+    fetch(`${server}/mainlist/selprop/agents`)
       .then(res => res.json())
       .then(data => {
         setagencylist(data);
@@ -281,7 +282,7 @@ console.log(agencylist);
   
   useEffect(() => {
     if (didMount) {
-    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${propData.Address}.json?access_token=pk.eyJ1IjoicnVwZXJ0ZWIiLCJhIjoiY2s1NWljdXAxMGcxMDNsa2J6MDRtYzloNiJ9.3CC5NFFUvlBMDULDdroiwA`).then(response =>{
+    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${propData.Address}.json?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`).then(response =>{
        return response.json();
     })
     .then(result => {
@@ -596,7 +597,7 @@ const [show, setShow] = useState(false);
     const saveData =  propData;
     saveData.Premises = listData;
 
-    fetch("http://localhost:3000/mainlist/selprop/save", {
+    fetch(`${server}/mainlist/selprop/save`, {
       method: "post",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
