@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React , { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -10,6 +10,28 @@ const PropCard = (props) => {   /* destructuring props inside bracket */
    /*  const {name, email, id} = props */
    var [check, setcheck] = useState(false);
 
+
+
+   var multselmatch = props.multipleSelect.filter(ele=> {
+        return ele._id === props._id;
+    })
+ 
+
+    useEffect(()=> {
+      if (multselmatch[0] !== undefined) {
+if (multselmatch[0].state === true) {
+  setcheck (true)
+} else {
+  setcheck (false)
+}
+      }
+    },[props.multipleSelect])
+
+    /* if (multselmatch.state === true) {
+
+      setcheck (true);
+    } */
+
    PropCard.defaultProps = {
     EarliestOccupation: ""
   }
@@ -20,12 +42,12 @@ const PropCard = (props) => {   /* destructuring props inside bracket */
     else {EarliestOccupation2 = (new Date(props.EarliestOccupation)).toLocaleDateString("en-GB");}
  
 
- console.log(EarliestOccupation2)
+
 
  const handleCheck =(event) => {
    if (event.target.checked) {
     props.handlemultipleSelect("add", props._id, props.BuildingName );
-    setcheck (event.target.checked);
+    /* props.setcheck (event.target.checked); */
  
    } else {
     props.handlemultipleSelect("remove", props._id, props.BuildingName );

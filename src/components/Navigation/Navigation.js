@@ -9,18 +9,18 @@ if (isSignedIn) {
 
         <div className="navigation">
         
-<nav style={{display: "flex"}}>
-<Button className="ma3" variant="primary" onClick={()=>onRouteChange('mainlist')}>
+<nav style={{display: "inline-flex"}}>
+<Button className="navbutton" variant="primary" onClick={()=>onRouteChange('mainlist')}>
         Property List
       </Button>  
        
-        <Button className="ma3" variant="primary" onClick={()=>onRouteChange('agencylist')}>
+        <Button className="navbutton" variant="primary" onClick={()=>onRouteChange('agencylist')}>
         Agency List
       </Button>  
         
 
        
-        <Button  className="ma3" variant="primary" onClick={()=>onRouteChange('signin')}>
+        <Button  className="navbutton" variant="primary" onClick={()=>onRouteChange('signin')}>
         Sign Out
       </Button>  
         </nav>

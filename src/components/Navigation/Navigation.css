@@ -1,4 +1,14 @@
 .navigation {
 display: grid;
-grid-template-columns:40% 60% ;
+grid-template-columns:80% 20% ;
+}
+
+.navbutton {
+    background-color: #21314b;
+    width:200px;
+    margin: 5px;
+    font-weight: 600;
+    font-size: 1.2em;
+
+    
 }

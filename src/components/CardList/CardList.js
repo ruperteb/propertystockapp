@@ -8,7 +8,8 @@ const CardList = (props) => {
         return (
          
         <PropCard 
-        handlemultipleSelect={props.handlemultipleSelect} handleCardSelect={props.handleCardSelect}
+      /* check={props.check}  setcheck={props.setcheck} */ handlemultipleSelect={props.handlemultipleSelect} handleCardSelect={props.handleCardSelect}
+      multipleSelect={props.multipleSelect}
             key={i} 
             _id={props.data[i]._id} 
             BuildingName = {props.data[i].BuildingName} 

@@ -12,7 +12,8 @@ import FormControl from 'react-bootstrap/FormControl';
 import Form from 'react-bootstrap/Form';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
-
+import backarrow from "../../assets/backarrow1.png"
+import savebutton from "../../assets/save1.png"
 import Map from "../Map/Map"
 import 'moment/locale/en-gb';
 import MomentLocaleUtils, {
@@ -20,6 +21,10 @@ import MomentLocaleUtils, {
   parseDate,
 } from 'react-day-picker/moment';
 import Select from 'react-select';
+import addbutton from "../../assets/add1.png";
+import removebutton from "../../assets/remove1.png";
+import photobutton from "../../assets/photo1.png";
+import mapbutton from "../../assets/map1.png";
 /* import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 import cloudinary from 'cloudinary-core'; */
 /* import DatePicker from "react-datepicker";
@@ -769,19 +774,25 @@ console.log(imagetype)
   return (
     <div>
 <div className="navbuttons center"> 
+
+
       <div>  
-  <Button className="w-5" variant="primary" onClick={() => props.onRouteChange("list")}>
+  {/* <Button className="w-5" variant="primary" onClick={() => props.onRouteChange("list")}>
         Back
-      </Button>
+      </Button> */}
+
+      <img onClick={() =>props.onRouteChange("list")} style={{paddingTop: "5px"}} className="grow pointer navicon" alt="logo" src={backarrow}/>
 
      
       </div>
 
       <div>
           
-          <Button variant="primary" onClick={handleShowSave}>
+        {/*   <Button variant="primary" onClick={handleShowSave}>
             Save
-          </Button>
+          </Button> */}
+
+          <img onClick={handleShowSave} style={{paddingTop: "5px"}} className="grow pointer navicon" alt="logo" src={savebutton}/>
 
           <Modal show={showsave} onHide={handleCloseSave}>
             <Modal.Header closeButton>
@@ -798,6 +809,8 @@ console.log(imagetype)
             </Modal.Footer>
           </Modal>
       </div>
+
+      
       </div>
 
       <div className="centre h2 w-100">
@@ -982,19 +995,30 @@ console.log(imagetype)
   </div>
   
   <div className="map"  >
+    <div className="mapcontainer">
    <Map lat={lat} long={long} />
-
-   <Button variant="primary" onClick={handleWidgetOpenAerial}>
+   </div>
+   {/* <Button variant="primary" onClick={handleWidgetOpenAerial}>
             Add Aerial
-          </Button>
+          </Button> */}
+<div><p className="mapbuttontext">Aerial</p>
+  <img onClick={handleWidgetOpenAerial}  className="mapbtn grow pointer" alt="logo" src={mapbutton}/>
+</div>
+          
 
-          <Button variant="primary" onClick={handleWidgetOpenPhoto}>
+        {/*   <Button variant="primary" onClick={handleWidgetOpenPhoto}>
             Add Photo
-          </Button>
-
-          <Button variant="primary" onClick={handleWidgetOpenPhoto2}>
+          </Button> */}
+<div><p className="mapbuttontext">Photo 1</p>
+          <img onClick={handleWidgetOpenPhoto}  className="mapbtn grow pointer" alt="logo" src={photobutton}/>
+          </div>
+        {/*   <Button variant="primary" onClick={handleWidgetOpenPhoto2}>
             Add Photo2
-          </Button>
+          </Button> */}
+<div><p className="mapbuttontext">Photo 2</p>
+          <img onClick={handleWidgetOpenPhoto2}  className="mapbtn grow pointer" alt="logo" src={photobutton}/>
+          </div>
+   
    </div>
 
   </div>
@@ -1008,13 +1032,17 @@ console.log(imagetype)
 
 <div className="premisesinfo center">
 
-<Button onClick={addButton} value="Add" type="button" class="btn btn-primary" >
+{/* <Button onClick={addButton} value="Add" type="button" class="btn btn-primary" >
         Add
-      </Button>
+      </Button> */}
 
-      <Button variant="primary" onClick={handleShow}>
+      <img onClick={addButton}  className="addbtn grow pointer" alt="logo" src={addbutton}/>
+
+      {/* <Button variant="primary" onClick={handleShow}>
         Delete
-      </Button>
+      </Button> */}
+
+      <img onClick={handleShow}  className="addbtn grow pointer" alt="logo" src={removebutton}/>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

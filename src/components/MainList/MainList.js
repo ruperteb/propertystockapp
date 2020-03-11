@@ -13,8 +13,14 @@ import useForceUpdate from 'use-force-update';
 import FilterModal from '../FilterModal/FilterModal';
 import MultipleSelect from '../MultipleSelect/MultipleSelect';
 import MultipleSelectPrint from '../MultipleSelectPrint/MultipleSelectPrint';
+import addbutton from "../../assets/add1.png";
+import removebutton from "../../assets/remove1.png";
+import multselbutton from "../../assets/multselect1.png";
+import filterbutton from "../../assets/filter1.png";
 
 function MainList() {
+
+ /*  var [check, setcheck] = useState(false); */
 
   
   const server = process.env.REACT_APP_SERVER
@@ -32,6 +38,10 @@ function MainList() {
   const [addText, setaddText] = useState("");
   const handleCloseAdd = () => setShowAdd(false);
   const handleShowAdd = () => setShowAdd(true);
+
+  const [showDel, setShowDel] = useState(false);
+  const handleCloseDel = () => setShowDel(false);
+  const handleShowDel = () => setShowDel(true);
 
   var [route, setRoute] = useState("list");
   const [selectedProp, setselectedProp] = useState();
@@ -199,6 +209,7 @@ const handleRemoveFetch = async () => {
         setData(data2);
       })
       setupdateCount(updateCount=updateCount+1);
+      setmultipleSelect([]);
  }}
 
 
@@ -211,7 +222,8 @@ const handleRemoveFetch = async () => {
 
  const handleRemoveButton =  () => {
   setremCount(remCount=remCount+1);
-   /* onRouteChange(route); */
+  handleCloseDel();
+ 
  }
 
  const handlemultipleSelectList =  () => {
@@ -339,19 +351,24 @@ if (route === "list") {
   <Form inline>
       <FormControl onChange={onSearchChange} type="text" placeholder="Search / Filter" className="mr-sm-2 search" />
     </Form>
-    <Nav className="mr-auto">
+    <Nav className="ml-auto">
 
    
-      <Button variant="primary" onClick={() => setfilterModalShow(true)}>
+      {/* <Button variant="primary" onClick={() => setfilterModalShow(true)}>
         Advanced Filter
-      </Button>
+      </Button> */}
+
+      <img onClick={() => setfilterModalShow(true)}  className="addbtn grow pointer" alt="logo" src={filterbutton}/>
 
       <FilterModal filter={filter} handleFilter={handleFilter} handleBuildingTypeChange={handleBuildingTypeChange} handleProvinceChange={handleProvinceChange} handleRegionChange={handleRegionChange} BuildingType={BuildingType} Province={Province} Region={Region} GLAValues={GLAValues} VacantValues={VacantValues} ErfValues={ErfValues} handleGLAChange={handleGLAChange} handleVacantChange={handleVacantChange} handleErfChange={handleErfChange} show={filtermodalShow} onHide={() => setfilterModalShow(false)} />
   
     
-    <Button onClick={handleShowAdd} className="button" variant="outline-primary">Add +</Button>
-    <Button onClick={handleRemoveButton} className="button" variant="outline-primary">Remove -</Button>
-    <Button onClick={handlemultipleSelectList} className="button" variant="outline-primary">Multiple Select</Button>
+    {/* <Button onClick={handleShowAdd} className="button" variant="outline-primary">Add +</Button> */}
+    <img onClick={handleShowAdd}  className="addbtn grow pointer" alt="logo" src={addbutton}/>
+   {/*  <Button onClick={handleRemoveButton} className="button" variant="outline-primary">Remove -</Button> */}
+    <img onClick={handleShowDel}  className="addbtn grow pointer" alt="logo" src={removebutton}/>
+    {/* <Button onClick={handlemultipleSelectList} className="button" variant="outline-primary">Multiple Select</Button> */}
+    <img onClick={handlemultipleSelectList}  className="addbtn grow pointer" alt="logo" src={multselbutton}/>
     </Nav>
 
     <Modal show={showAdd} onHide={handleCloseAdd}>
@@ -368,10 +385,25 @@ if (route === "list") {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <Modal show={showDel} onHide={handleCloseDel}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this property?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseDel}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleRemoveButton} >
+            Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
     
   </Navbar>
     <div>
-<CardList multipleSelect={multipleSelect} handleCardSelect={handleCardSelect} handlemultipleSelect={handlemultipleSelect} data={filteredData}/>
+<CardList /* check={check} setcheck={setcheck} */ multipleSelect={multipleSelect} handleCardSelect={handleCardSelect} handlemultipleSelect={handlemultipleSelect} data={filteredData}/>
     </div>
 
     </div>
