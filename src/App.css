@@ -4,7 +4,7 @@
 
 .NavBar {
   display: grid;
-  grid-template-columns: 400px auto 800px;
+  grid-template-columns: 400px 500px 800px;
   grid-template-rows: 150px;
   align-items: center;
   justify-items: center;
