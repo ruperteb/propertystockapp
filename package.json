@@ -26,6 +26,7 @@
     "react-select": "^3.0.8",
     "react-tilt": "^0.1.4",
     "react-to-print": "^2.5.1",
+    "react-transition-group": "^4.3.0",
     "tachyons": "^4.11.1",
     "use-force-update": "^1.0.7",
     "webpack": "4.41.2"

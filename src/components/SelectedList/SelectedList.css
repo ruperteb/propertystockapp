@@ -1,3 +1,100 @@
 .selectcontainer {
     background-color: #fff;
 }
+
+
+/* .showmultipleselect-enter {
+    opacity: 0;
+  }
+  .showmultipleselect-enter-active {
+    opacity: 1;
+    transition: opacity 400ms;
+  }
+  .showmultipleselect-exit {
+    opacity: 1;
+  }
+  .showmultipleselect-exit-active {
+    opacity: 0;
+    transition: opacity 400ms;
+  } */
+
+  /* ENTER TRANSITION */
+/* Declare transition start properties*/
+.showmultipleselect-enter {
+    transform: translateX(300px);
+    opacity: 0;
+    position: absolute;
+    
+}
+
+/* Declare transition properties */
+.showmultipleselect-enter.showmultipleselect-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 200ms linear;
+}
+
+/* EXIT TRANSITION */
+.showmultipleselect-exit {
+    transform: translateX(0);
+    opacity: 1;
+    
+}
+
+.showmultipleselect-exit.showmultipleselect-exit-active {
+    transform: translateX(300px);
+    opacity: 0;
+    transition: all 300ms linear
+}
+
+.selectedprop {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+  }
+}

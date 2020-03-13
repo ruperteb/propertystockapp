@@ -3,6 +3,7 @@ import PropCard from "../Card/Card";
 import "./CardList.css" 
 import SelectedList from "../SelectedList/SelectedList";
 
+
 const CardList = (props) => {
     const cardComponent = props.data.map((_id, i) =>{
         return (
